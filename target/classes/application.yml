@@ -1,0 +1,21 @@
+---
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.1.2.71
+          defaultBrokerPort: 9092
+          zkNodes: 10.1.2.71
+          defaultZkPort: 2181
+          zkConnectionTimeout: 1000000
+      bindings:
+        output:
+          destination: xdtest
+          content-type: application/json
+          producer:
+            partitionKeyExpression: payload.jrnl
+            partitionCount: 20
+
+server:
+  port: 9005

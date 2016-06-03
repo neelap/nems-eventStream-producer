@@ -1,0 +1,7 @@
+---
+spring:
+  application:
+    name: eventProducer
+  cloud:
+    config:
+      uri: http://10.1.2.31:8001
